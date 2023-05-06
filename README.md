@@ -65,14 +65,14 @@ aws s3api create-bucket --bucket kops-abhi-storage --region us-east-1
 ### Create the cluster 
 
 ```
-kops create cluster /
---name=demok8scluster.k8s.local /
---state=s3://[S3_BUCKET_NAME /
---zones=us-east-1a /
---node-count=1 /
---node-size=t2.micro /
---master-size=t2.micro  /
---master-volume-size=8 /
+kops create cluster \
+--name=demok8scluster.k8s.local \
+--state=s3://[S3_BUCKET_NAME \
+--zones=us-east-1a \
+--node-count=1 \
+--node-size=t2.micro \
+--master-size=t2.micro  \
+--master-volume-size=8 \
 --node-volume-size=8
 ```
 
