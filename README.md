@@ -65,7 +65,15 @@ aws s3api create-bucket --bucket kops-abhi-storage --region us-east-1
 ### Create the cluster 
 
 ```
-kops create cluster --name=demok8scluster.k8s.local --state=s3://kops-abhi-storage --zones=us-east-1a --node-count=1 --node-size=t2.micro --master-size=t2.micro  --master-volume-size=8 --node-volume-size=8
+kops create cluster /
+--name=demok8scluster.k8s.local /
+--state=s3://[S3_BUCKET_NAME /
+--zones=us-east-1a /
+--node-count=1 /
+--node-size=t2.micro /
+--master-size=t2.micro  /
+--master-volume-size=8 /
+--node-volume-size=8
 ```
 
 ### Important: Edit the configuration as there are multiple resources created which won't fall into the free tier.
@@ -77,7 +85,7 @@ kops edit cluster myfirstcluster.k8s.local
 Step 12: Build the cluster
 
 ```
-kops update cluster demok8scluster.k8s.local --yes --state=s3://kops-abhi-storage
+kops update cluster demok8scluster.k8s.local --yes --state=s3://[S3_BUCKET_NAME
 ```
 
 This will take a few minutes to create............
