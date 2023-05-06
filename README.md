@@ -67,7 +67,7 @@ aws s3api create-bucket --bucket kops-abhi-storage --region us-east-1
 ```
 kops create cluster \
 --name=demok8scluster.k8s.local \
---state=s3://[S3_BUCKET_NAME \
+--state=s3://[S3_BUCKET_NAME] \
 --zones=us-east-1a \
 --node-count=1 \
 --node-size=t2.micro \
@@ -85,7 +85,7 @@ kops edit cluster myfirstcluster.k8s.local
 Step 12: Build the cluster
 
 ```
-kops update cluster demok8scluster.k8s.local --yes --state=s3://[S3_BUCKET_NAME
+kops update cluster demok8scluster.k8s.local --yes --state=s3://[S3_BUCKET_NAME]
 ```
 
 This will take a few minutes to create............
